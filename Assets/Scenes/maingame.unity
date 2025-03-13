@@ -679,13 +679,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.27, z: -19.8}
+  m_LocalRotation: {x: 0.17748733, y: -0, z: -0, w: 0.9841231}
+  m_LocalPosition: {x: 0.16, y: 4.9, z: -20.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.447, y: 0, z: 0}
 --- !u!1 &1066380010
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1066380011}
+  - component: {fileID: 1066380012}
   m_Layer: 0
   m_Name: 'Enemy  Point B '
   m_TagString: Untagged
@@ -711,12 +712,30 @@ Transform:
   m_GameObject: {fileID: 1066380010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.43, y: 0.57299995, z: 20.65}
+  m_LocalPosition: {x: 0.43, y: 1.0420002, z: 35.940002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1066380012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066380010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00953d73efbc5eb49be14c656049e8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 4950819303911163772, guid: a711d305267b7c94983995238e0d562e, type: 3}
+  spawnPoints:
+  - {fileID: 1066380011}
+  minSpawnTime: 3
+  maxSpawnTime: 10
+  maxEnemies: 3
 --- !u!1 &1251506455
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251506456}
+  - component: {fileID: 1251506457}
   m_Layer: 0
   m_Name: 'Enemy Point A '
   m_TagString: Untagged
@@ -742,12 +762,30 @@ Transform:
   m_GameObject: {fileID: 1251506455}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.339, y: 0.57299995, z: 20.65}
+  m_LocalPosition: {x: -2.339, y: 0.85, z: 36.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1251506457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251506455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00953d73efbc5eb49be14c656049e8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 4950819303911163772, guid: a711d305267b7c94983995238e0d562e, type: 3}
+  spawnPoints:
+  - {fileID: 1251506456}
+  minSpawnTime: 3
+  maxSpawnTime: 10
+  maxEnemies: 3
 --- !u!1 &1755839375
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1873868229}
+  - component: {fileID: 1873868230}
   m_Layer: 0
   m_Name: 'Enemy  Point C '
   m_TagString: Untagged
@@ -804,12 +843,30 @@ Transform:
   m_GameObject: {fileID: 1873868228}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.879, y: 0.57299995, z: 20.65}
+  m_LocalPosition: {x: 2.879, y: 1.0660001, z: 35.940002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1873868230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873868228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00953d73efbc5eb49be14c656049e8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 4950819303911163772, guid: a711d305267b7c94983995238e0d562e, type: 3}
+  spawnPoints:
+  - {fileID: 1873868229}
+  minSpawnTime: 3
+  maxSpawnTime: 10
+  maxEnemies: 3
 --- !u!1 &2098527401
 GameObject:
   m_ObjectHideFlags: 0
