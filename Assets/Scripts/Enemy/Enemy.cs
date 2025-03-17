@@ -27,7 +27,7 @@ public class Enemy : Entity
             Destroy(other.gameObject);
 
             // Give player score
-            Player player = FindObjectOfType <Player>();
+            Player player = FindAnyObjectByType <Player>();
             if (player != null)
             {
                 player.AddScore(GetScoreValue());

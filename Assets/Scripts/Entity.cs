@@ -26,6 +26,7 @@ public class Entity : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"{this.name} took {damage} remaining {this.Health} ");
+        Debug.Log($"Score {score}");
         Isdead();
     }
 }

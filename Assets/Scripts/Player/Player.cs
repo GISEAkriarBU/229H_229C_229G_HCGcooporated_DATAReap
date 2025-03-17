@@ -7,10 +7,19 @@ public class Player : MonoBehaviour, ShootAble
     [SerializeField]
     private Transform bulletSpawn;
     public Transform BulletSpawn { get { return bulletSpawn; } set { bulletSpawn = value; } }
+    [SerializeField]
+   
+    private Transform meteorSpawn;
+    public Transform MeteorSpawn { get { return meteorSpawn; } set { meteorSpawn = value; } }
 
     [SerializeField]
     private GameObject bullet;
     public GameObject Bullet { get { return bullet; } set { bullet = value; } }
+    
+    [SerializeField]
+    private GameObject meteor;
+    public GameObject Meteor { get { return meteor; } set { meteor = value; } }
+
     public float BulletTimer { get; set; }
     public float BulletWaitTime { get; set; }
 
@@ -28,22 +37,24 @@ public class Player : MonoBehaviour, ShootAble
         {
             GameObject obj = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
             BeamLazer bEnergy = obj.GetComponent<BeamLazer>();
-            bEnergy.Init(20, this);
+            bEnergy.Init(100, this);
 
-            BulletWaitTime = 0;
+            BulletWaitTime = 3;
         }
-            if (Input.GetButtonDown("Fire2") && BulletWaitTime >= BulletTimer)
+            
+        if (Input.GetButtonDown("Fire2") && BulletWaitTime >= BulletTimer)
             {
-                GameObject obj = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
+                GameObject obj = Instantiate(Meteor, MeteorSpawn.position, MeteorSpawn.rotation);
                 Meteorite Mtr = obj.GetComponent<Meteorite>();
-                Mtr.Init(50, this);
+                Mtr.Init(200, this);
 
-                BulletWaitTime = 0;
+                BulletWaitTime = 30;
             }
     }
 
     public void AddScore(int points)
     {
         Score += points;
+        
     }
 }

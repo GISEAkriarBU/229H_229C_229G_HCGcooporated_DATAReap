@@ -7,7 +7,7 @@ public class BigEnemy : Enemy
     protected override void Start()
     {
         base.Start();
-        Init(100); // Higher HP
+        Init(150); // Higher HP
         SetMovement(Vector3.back, 2f); // Moves forward slower
     }
 
