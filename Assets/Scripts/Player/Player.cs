@@ -39,16 +39,16 @@ public class Player : MonoBehaviour, ShootAble
             BeamLazer bEnergy = obj.GetComponent<BeamLazer>();
             bEnergy.Init(100, this);
 
-            BulletWaitTime = 3;
+            BulletWaitTime = 0;
         }
             
         if (Input.GetButtonDown("Fire2") && BulletWaitTime >= BulletTimer)
             {
                 GameObject obj = Instantiate(Meteor, MeteorSpawn.position, MeteorSpawn.rotation);
                 Meteorite Mtr = obj.GetComponent<Meteorite>();
-                Mtr.Init(200, this);
+                Mtr.Init(500, this);
 
-                BulletWaitTime = 30;
+            BulletWaitTime = 0;
             }
     }
 

@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Meteorite : _Weapon
 {
+    public float delayTime;
+
     public override void OnHitWith(Entity enemy) //polymorph
-    { if (enemy is Enemy) { enemy.TakeDamage(this.Damage); Destroy(this.gameObject); } else if (enemy is not Enemy) { Destroy(this.gameObject); } }
+    { if (enemy is Enemy) 
+        { enemy.TakeDamage(this.Damage);
+            if (delayTime > 20) { Destroy(this.gameObject); } 
+        } 
+        else if (delayTime > 60) { Destroy(this.gameObject); } 
+    }
 
    
     private void FixedUpdate()
     {
 
-        Move();
+        delayTime += Time.deltaTime; 
     }
 
 
