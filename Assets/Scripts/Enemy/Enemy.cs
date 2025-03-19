@@ -23,7 +23,6 @@ public class Enemy : Entity
     {
         if (other.CompareTag("Bullet"))
         {
-            TakeDamage(10);
             Destroy(other.gameObject);
 
             // Give player score
@@ -36,4 +35,5 @@ public class Enemy : Entity
     }
 
     protected virtual int GetScoreValue() { return 0; }
+    
 }

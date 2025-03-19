@@ -11,4 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/maingame.unity
     guid: a5bc0ef5955ee644b9e26909305d9cb4
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 861dc85d1ab62714987fd865609cad51
+  - enabled: 1
+    path: Assets/Scenes/WinAndCredit.unity
+    guid: d0ee672eede333e478845a7a75c5e63d
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 50dca0e13619cf54c9051ce151200b28
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

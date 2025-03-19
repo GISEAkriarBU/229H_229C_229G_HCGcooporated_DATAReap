@@ -12,6 +12,11 @@ public class Entity : MonoBehaviour
     public int Score { get { return health; } set { health = value; } }
 
     public void Init(int newHealth) { Health = newHealth; }
+    public float GetHealthPercentage()
+    {
+        //turn HP into percentage  to use in Fill
+        return (float)Health / 100;
+    }
 
     public bool Isdead()
     {
@@ -26,7 +31,7 @@ public class Entity : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"{this.name} took {damage} remaining {this.Health} ");
-        Debug.Log($"Score {score}");
         Isdead();
     }
+
 }
