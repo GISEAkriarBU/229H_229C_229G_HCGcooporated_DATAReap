@@ -13,7 +13,7 @@ public class NormalEnemy : Enemy
 
     protected override int GetScoreValue()
     {
-        return 10; // Score for killing normal enemy
+        return 25; // Score for killing normal enemy
     }
 }
 

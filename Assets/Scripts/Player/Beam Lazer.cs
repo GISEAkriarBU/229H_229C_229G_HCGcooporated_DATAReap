@@ -20,14 +20,18 @@ public class BeamLazer : _Weapon
     {
 
         delayTime += Time.deltaTime;
+        Move();
     }
-
-
 
     public override void Move()//polymorph
     {
 
-        
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.AddTorque(Vector3.forward * 10f); // Adjust the force as needed
+        }
     }
     
 }

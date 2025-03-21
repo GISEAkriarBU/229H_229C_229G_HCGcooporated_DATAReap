@@ -29,6 +29,10 @@ public class Player : Entity, ShootAble
     public float BulletTimer { get; set; }
     [field: SerializeField]
     public float BulletWaitTime { get; set; }
+    [field: SerializeField]
+    public float MeteoriteTimer { get; set; }
+    [field: SerializeField]
+    public float MeteoriteWaitTime { get; set; }
 
 
     public void Start()
@@ -66,11 +70,11 @@ public class Player : Entity, ShootAble
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene("NextSceneName"); // Replace with actual scene name
+        SceneManager.LoadScene("WinAndCredit"); // Replace with actual scene name
     }
     
     private void Update() { Shoot(); }
-    void FixedUpdate() { BulletWaitTime += Time.deltaTime; }
+    void FixedUpdate() { BulletWaitTime += Time.deltaTime; MeteoriteWaitTime += Time.deltaTime; }
     public void Shoot()
     {
         if (Input.GetButtonDown("Fire1") && BulletWaitTime >= BulletTimer)
@@ -82,13 +86,13 @@ public class Player : Entity, ShootAble
             BulletWaitTime = 0;
         }
 
-        if (Input.GetButtonDown("Fire2") && BulletWaitTime >= BulletTimer)
+        if (Input.GetButtonDown("Fire2") && MeteoriteWaitTime >= MeteoriteTimer)
         {
             GameObject obj = Instantiate(Meteor, MeteorSpawn.position, MeteorSpawn.rotation);
             Meteorite Mtr = obj.GetComponent<Meteorite>();
             Mtr.Init(500, this);
 
-            BulletWaitTime = 0;
+            MeteoriteWaitTime = 0;
         }
     }
 

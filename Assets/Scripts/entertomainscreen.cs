@@ -9,7 +9,7 @@ public class entertomainscreen : MonoBehaviour
     {
         if (Input.anyKeyDown) // Detect any key press
         {
-            SceneManager.LoadScene("maingame"); // Load next scene
+            SceneManager.LoadScene("HowToPlay"); // Load next scene
         }
     }
 }

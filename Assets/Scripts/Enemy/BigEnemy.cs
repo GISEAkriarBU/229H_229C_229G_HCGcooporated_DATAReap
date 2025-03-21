@@ -13,6 +13,6 @@ public class BigEnemy : Enemy
 
     protected override int GetScoreValue()
     {
-        return 20; // Score for killing big enemy
+        return 50; // Score for killing big enemy
     }
 }
