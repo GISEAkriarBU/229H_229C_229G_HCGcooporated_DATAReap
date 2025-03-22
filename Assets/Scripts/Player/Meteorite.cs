@@ -43,6 +43,8 @@ public class Meteorite : _Weapon
 
             if (rb != null)
             {
+                float massMeteorite = rb.mass;
+                float gravitationalForce = (6.674f * Mathf.Pow(10, -11)) * Mathf.Sin(massMeteorite);
                 rb.AddTorque(Vector3.up * 50f, ForceMode.Acceleration); // Example: Spin effect
                 rb.AddForce(Vector3.down * 5f, ForceMode.Acceleration);
                 rb.AddForce(Vector3.forward * 10f, ForceMode.Acceleration);
