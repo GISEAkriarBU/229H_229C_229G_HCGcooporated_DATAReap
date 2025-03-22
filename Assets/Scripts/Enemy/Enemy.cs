@@ -24,16 +24,9 @@ public class Enemy : Entity
         if (other.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
-
-            // Give player score
-            Player player = FindAnyObjectByType <Player>();
-            if (player != null)
-            {
-                player.AddScore(GetScoreValue());
-            }
+            
         }
     }
-
-    protected virtual int GetScoreValue() { return 0; }
+    
     
 }

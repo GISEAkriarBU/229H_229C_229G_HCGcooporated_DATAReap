@@ -5,33 +5,62 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     private int health;
-    public int Health { get { return health; } set { health = value; } }
-    public Rigidbody rb;
-    
-    private int score;
-    public int Score { get { return health; } set { health = value; } }
+    public int Health { get => health; set => health = value; }
 
-    public void Init(int newHealth) { Health = newHealth; }
+    public Rigidbody rb;
+
+    private int score;
+    public int Score { get => score; set => score = value; }
+
+    [SerializeField] private AudioClip hitSound;
+    private AudioSource audioSource;
+
+    public void Init(int newHealth)
+    {
+        Health = newHealth;
+    }
+
     public float GetHealthPercentage()
     {
-        //turn HP into percentage  to use in Fill
         return (float)Health / 100;
     }
 
-    public bool Isdead()
+    public bool IsDead()
     {
-        if (Health <= 0)
-        {
-            Destroy(this.gameObject);
-            return true;
-        }
         return Health <= 0;
     }
+
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        Debug.Log($"{this.name} took {damage} remaining {this.Health} ");
-        Isdead();
+        Debug.Log($"{name} took {damage}, remaining HP: {Health}");
+
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
+
+        if (IsDead())
+        {
+            Die();
+        }
     }
 
+    protected virtual void Die()
+    {
+        Player player = FindAnyObjectByType<Player>();
+        if (player != null)
+        {
+            player.AddScore(GetScoreValue());
+        }
+
+        Destroy(gameObject);
+    }
+
+    protected virtual int GetScoreValue() { return 0; }
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 }

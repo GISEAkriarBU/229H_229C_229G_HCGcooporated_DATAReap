@@ -83,6 +83,7 @@ public class Player : Entity, ShootAble
             BeamLazer bEnergy = obj.GetComponent<BeamLazer>();
             bEnergy.Init(100, this);
 
+            audioSource.PlayOneShot(shootSound);
             BulletWaitTime = 0;
         }
 
@@ -92,6 +93,7 @@ public class Player : Entity, ShootAble
             Meteorite Mtr = obj.GetComponent<Meteorite>();
             Mtr.Init(500, this);
 
+            audioSource.PlayOneShot(meteorSound);
             MeteoriteWaitTime = 0;
         }
     }
@@ -99,7 +101,8 @@ public class Player : Entity, ShootAble
     public void AddScore(int points)
     {
         Score += points;
-
+        audioSource.PlayOneShot(scoreSound);
+        audioSource.PlayOneShot(hitSound);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -110,6 +113,19 @@ public class Player : Entity, ShootAble
             SceneManager.LoadScene ("GameOverScene"); // Replace with actual scene name
         }
     }
+    
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioClip meteorSound;
+    [SerializeField] private AudioClip scoreSound;
+    [SerializeField] private AudioClip hitSound;
+
+    private AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
 }
 

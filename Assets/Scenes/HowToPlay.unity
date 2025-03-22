@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 127, y: -25}
+  m_AnchoredPosition: {x: 157, y: -25}
   m_SizeDelta: {x: 47.63199, y: 31.438797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &243263334
@@ -388,7 +388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: -25}
+  m_AnchoredPosition: {x: 58, y: -25}
   m_SizeDelta: {x: 47.63199, y: 31.438797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &372068657
@@ -635,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838417636310757546, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 1838417636310757546, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -655,13 +655,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2388899692637706869, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_text
-      value: 'ready?
+      value: 'Start!
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 2549997493009274141, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.44010326
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.61972463
       objectReference: {fileID: 0}
     - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -738,8 +750,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "How To play \nleft click :for lazerbeam\nright click for meteorite\n\nenemy
-    will give you 50 P\nand the bigger will give you 50P"
+  m_text: "[How to Play]\r\nLeft Click: Fire Laser Beam\r\nRight Click: Launch Meteorite\r\n\r\nDefeating
+    an enemy gives you 25 points. \r\nBigger enemies give you 50 points."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -766,8 +778,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18.93
+  m_fontSizeBase: 18.93
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -776,11 +788,11 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_characterSpacing: -6.3
+  m_wordSpacing: -0.43
+  m_lineSpacing: 14.6
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -0.06
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -963,7 +975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838417636310757546, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 1838417636310757546, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -983,11 +995,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2388899692637706869, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_text
-      value: MainMenu
+      value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 2549997493009274141, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.754717
       objectReference: {fileID: 0}
     - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1141,13 +1165,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2388899692637706869, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_text
-      value: 'exist
+      value: 'Exit
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 2549997493009274141, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_Name
       value: Button (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.50863296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.50863296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 4280338936982538584, guid: 8bea983d1b2f09343a738be271365f4e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1729,7 +1765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -443, y: 94}
+  m_AnchoredPosition: {x: -443, y: 88.2}
   m_SizeDelta: {x: 95.263916, y: 15.719406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1903859288
@@ -1752,8 +1788,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Goal is to achive point to 1000\nDo not get hit by  one  becuase\n if
-    you get hit \nthat mean you over"
+  m_text: 'Your goal is to reach 1000 points.
+
+
+    Avoid getting hit. If you do,
+    the game is over.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1780,8 +1819,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 20.7
+  m_fontSizeBase: 20.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2002,7 +2041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -422.06198, y: 99}
+  m_AnchoredPosition: {x: -422.06198, y: 94.8}
   m_SizeDelta: {x: 95.263916, y: 15.7194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040642315
@@ -2025,7 +2064,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "press A , S , D to move \non the position to aim or dodge the enemy"
+  m_text: 'Press A, S, or D to move, aim or dodge enemies.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
