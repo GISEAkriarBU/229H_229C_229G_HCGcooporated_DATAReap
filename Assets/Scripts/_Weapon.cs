@@ -23,4 +23,5 @@ public abstract class _Weapon : MonoBehaviour
         OnHitWith(other.GetComponent<Entity>());
         Destroy(this.gameObject, 5f);
     }
+    
 }

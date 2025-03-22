@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8676056550416621326}
   m_Layer: 0
   m_Name: Meteorite (7)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124607638423205199}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 4330197154060484422}
   m_Layer: 0
   m_Name: Meteorite (5)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,7 +269,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069790751963980616}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 25
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 6702505819039244180}
   m_Layer: 0
   m_Name: Meteorite (13)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,9 +420,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2603976031902726227}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 1347868053426497114}
   m_Layer: 0
   m_Name: Meteorite
-  m_TagString: Bullet
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,7 +487,6 @@ Transform:
   m_LocalScale: {x: 5.863975, y: 5.863975, z: 5.863975}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6562512859231596579}
   - {fileID: 8131389991583758202}
   - {fileID: 7948351085402721349}
   - {fileID: 892544094759314807}
@@ -504,6 +503,7 @@ Transform:
   - {fileID: 5002739454473477099}
   - {fileID: 7621709876410931522}
   - {fileID: 1499151805472548424}
+  - {fileID: 6562512859231596579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 53.903, y: 0, z: 0}
 --- !u!33 &7032726543291339066
@@ -575,7 +575,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -588,9 +588,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3460142382616958488}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 1945536823165741126}
   m_Layer: 0
   m_Name: Meteorite (9)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +739,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3470950168405913675}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 7201422903049047121}
   m_Layer: 0
   m_Name: Meteorite (2)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,7 +890,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3671029372401907871}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 7969853468069478566}
   m_Layer: 0
   m_Name: Meteorite (1)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1041,9 +1041,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3694163409636881285}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 8825173926224779606}
   m_Layer: 0
   m_Name: Meteorite (15)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1192,7 +1192,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4503876948909572940}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 25
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 2087751250234484354}
   m_Layer: 0
   m_Name: Meteorite (11)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1343,9 +1343,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4697566295071550504}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1392,7 +1392,7 @@ GameObject:
   - component: {fileID: 1992936567816496016}
   m_Layer: 0
   m_Name: Meteorite (12)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1494,9 +1494,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5184083867311592927}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 2171539448369033671}
   m_Layer: 0
   m_Name: Meteorite (17)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1645,7 +1645,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5306300019706474857}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1694,7 +1694,7 @@ GameObject:
   - component: {fileID: 4212975731863208387}
   m_Layer: 0
   m_Name: Meteorite (4)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1796,7 +1796,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5503120508348409210}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1845,7 +1845,7 @@ GameObject:
   - component: {fileID: 7750410136720637961}
   m_Layer: 0
   m_Name: Meteorite (16)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1947,7 +1947,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6357278364142396452}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1996,7 +1996,7 @@ GameObject:
   - component: {fileID: 1153062501439949301}
   m_Layer: 0
   m_Name: Meteorite (3)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2098,9 +2098,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6542216121410176304}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2147,7 +2147,7 @@ GameObject:
   - component: {fileID: 5993473157321827094}
   m_Layer: 0
   m_Name: Meteorite (8)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2249,7 +2249,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6579450904033258615}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2298,7 +2298,7 @@ GameObject:
   - component: {fileID: 9181437667743396380}
   m_Layer: 0
   m_Name: Meteorite (10)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2400,7 +2400,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8608237005261004256}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 25
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2449,7 +2449,7 @@ GameObject:
   - component: {fileID: 6919427908172651536}
   m_Layer: 0
   m_Name: Meteorite (6)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2551,7 +2551,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8628009490258152243}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2600,7 +2600,7 @@ GameObject:
   - component: {fileID: 7300755310042481206}
   m_Layer: 0
   m_Name: Meteorite (14)
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2702,7 +2702,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9113878919898464219}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 25
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

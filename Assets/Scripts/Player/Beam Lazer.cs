@@ -15,7 +15,13 @@ public class BeamLazer : _Weapon
         else if (delayTime > 60) { Destroy(this.gameObject); }
     }
 
-
+    void Start()
+    {
+        if (CompareTag("Bullet")) // Make sure this object is tagged "Meteorite"
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+        }
+    }
     private void FixedUpdate()
     {
 
@@ -27,11 +33,15 @@ public class BeamLazer : _Weapon
     {
 
         Rigidbody rb = GetComponent<Rigidbody>();
-
-        if (rb != null)
+        if (CompareTag("Bullet"))
         {
-            rb.AddTorque(Vector3.forward * 10f); // Adjust the force as needed
+            if (rb != null)
+            {
+                rb.AddTorque(Vector3.forward * 10f); 
+                rb.AddForce(Vector3.forward * 50f, ForceMode.Acceleration);
+            }
         }
+        
     }
     
 }
