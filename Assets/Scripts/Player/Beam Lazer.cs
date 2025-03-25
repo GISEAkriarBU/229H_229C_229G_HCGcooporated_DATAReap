@@ -31,17 +31,26 @@ public class BeamLazer : _Weapon
 
     public override void Move()//polymorph
     {
-
         Rigidbody rb = GetComponent<Rigidbody>();
-        if (CompareTag("Bullet"))
+        if (CompareTag("Bullet") && rb != null)
         {
-            if (rb != null)
-            {
-                rb.AddTorque(Vector3.forward * 10f); 
-                rb.AddForce(Vector3.forward * 50f, ForceMode.Acceleration);
-            }
+            // Apply Spin (Angular Velocity)
+            Vector3 spinAxis = Vector3.forward; // Example: Spinning around the Z-axis
+            float spinSpeed = 10f;
+            rb.AddTorque(spinAxis * spinSpeed, ForceMode.Acceleration);
+
+            // Apply Forward Motion
+            rb.AddForce(Vector3.forward * 50f, ForceMode.Acceleration);
+
+            // --- Magnus Effect ---
+            Vector3 velocity = rb.linearVelocity;
+            Vector3 angularVelocity = rb.angularVelocity;
+            float magnusCoefficient = 0.05f; // Adjust based on simulation needs
+
+            // Magnus force: perpendicular to both velocity and spin
+            Vector3 magnusForce = magnusCoefficient * Vector3.Cross(angularVelocity, velocity);
+            rb.AddForce(magnusForce, ForceMode.Acceleration);
         }
-        
     }
     
 }

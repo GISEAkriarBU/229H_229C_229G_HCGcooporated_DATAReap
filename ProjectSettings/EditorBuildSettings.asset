@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HowToPlay.unity
     guid: 50dca0e13619cf54c9051ce151200b28
+  - enabled: 1
+    path: Assets/Scenes/SecretPath.unity
+    guid: c6ca600f633a732499ffc57f72ec4a4b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
