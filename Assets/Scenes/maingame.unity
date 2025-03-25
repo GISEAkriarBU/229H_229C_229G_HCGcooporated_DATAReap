@@ -416,7 +416,7 @@ MonoBehaviour:
   meteor: {fileID: 3460142382616958488, guid: 481592821a26f3844b6702b6be5afafb, type: 3}
   <BulletTimer>k__BackingField: 1
   <BulletWaitTime>k__BackingField: 0
-  <MeteoriteTimer>k__BackingField: 8
+  <MeteoriteTimer>k__BackingField: 10
   <MeteoriteWaitTime>k__BackingField: 0
   scoreText: {fileID: 1226425269}
   shootSound: {fileID: 8300000, guid: bf1c339b3b21301448dc09b4ff3ff586, type: 3}
@@ -436,7 +436,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
