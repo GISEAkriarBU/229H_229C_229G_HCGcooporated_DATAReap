@@ -221,6 +221,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -262,6 +263,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248375016}
   m_CullTransparentMesh: 1
+--- !u!1001 &264498022
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5610762750213786441, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: isLostScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313634954593033497, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_Name
+      value: GameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 77.25232
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 536.5073
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369272905198758008, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14c00f3c9e424c048bbe0981492b2a76, type: 3}
 --- !u!54 &424176225 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: -6058704527595264654, guid: a711d305267b7c94983995238e0d562e, type: 3}
@@ -542,14 +604,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146144827}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -675,6 +737,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -696,9 +760,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1285161868
 MeshFilter:
@@ -1146,6 +1212,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1384,3 +1451,4 @@ SceneRoots:
   - {fileID: 1139291639}
   - {fileID: 909370970}
   - {fileID: 789099278}
+  - {fileID: 264498022}
