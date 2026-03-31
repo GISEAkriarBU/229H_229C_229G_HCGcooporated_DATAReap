@@ -3,7 +3,7 @@ using UnityEngine;
 using Unity.Services.Core;
 using Unity.Services.Analytics;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 
 public class SceneAnalyticsTrigger : MonoBehaviour
 {

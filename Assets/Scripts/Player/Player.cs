@@ -33,6 +33,7 @@ public class Player : Entity, ShootAble
     public float MeteoriteTimer { get; set; }
     [field: SerializeField]
     public float MeteoriteWaitTime { get; set; }
+    private Animator animator;
 
 
     public void Start()
@@ -80,6 +81,12 @@ public class Player : Entity, ShootAble
     {
         if (Input.GetButtonDown("Fire1") && BulletWaitTime >= BulletTimer)
         {
+            if (animator != null)
+            {
+                animator.ResetTrigger("Attack");
+                animator.SetTrigger("Attack");
+            }
+
             GameObject obj = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
             BeamLazer bEnergy = obj.GetComponent<BeamLazer>();
             bEnergy.Init(100, this);
@@ -90,6 +97,12 @@ public class Player : Entity, ShootAble
 
         if (Input.GetButtonDown("Fire2") && MeteoriteWaitTime >= MeteoriteTimer)
         {
+            if (animator != null)
+            {
+                animator.CrossFade("SpecialAttack", 0.1f);
+            }
+
+
             SceneAnalyticsTrigger.MeteorUsing++;
             GameObject obj = Instantiate(Meteor, MeteorSpawn.position, MeteorSpawn.rotation);
             Meteorite Mtr = obj.GetComponent<Meteorite>();
@@ -126,6 +139,12 @@ public class Player : Entity, ShootAble
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+
+        if (animator == null)
+        {
+            Debug.LogError("Animator is missing on Player!");
+        }
     }
 
 
