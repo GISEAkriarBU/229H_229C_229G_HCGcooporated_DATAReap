@@ -37,6 +37,7 @@ public class Player : Entity, ShootAble
 
     public void Start()
     {
+        SceneAnalyticsTrigger.MeteorUsing = 0;
         Init(100);
         Init(maxHealth);
         UpdateScoreUI();
@@ -89,6 +90,7 @@ public class Player : Entity, ShootAble
 
         if (Input.GetButtonDown("Fire2") && MeteoriteWaitTime >= MeteoriteTimer)
         {
+            SceneAnalyticsTrigger.MeteorUsing++;
             GameObject obj = Instantiate(Meteor, MeteorSpawn.position, MeteorSpawn.rotation);
             Meteorite Mtr = obj.GetComponent<Meteorite>();
             Mtr.Init(500, this);

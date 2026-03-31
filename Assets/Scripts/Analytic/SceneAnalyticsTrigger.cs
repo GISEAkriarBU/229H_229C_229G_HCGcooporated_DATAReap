@@ -3,6 +3,7 @@ using UnityEngine;
 using Unity.Services.Core;
 using Unity.Services.Analytics;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 public class SceneAnalyticsTrigger : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class SceneAnalyticsTrigger : MonoBehaviour
     public bool isSecretScene = false;
     public bool isLostScene = false;
 
+
+    public static int MeteorUsing = 0;
+
+    
     async void Start()
     {
         try
@@ -42,7 +47,9 @@ public class SceneAnalyticsTrigger : MonoBehaviour
         {
             { "StageEnterWin", isWinScene },
             { "StageEnterSecret", isSecretScene },
-            { "StageEnterLost", isLostScene }
+            { "StageEnterLost", isLostScene },
+            { "MeteorUse", MeteorUsing }
+
         };
 
         // 5. Record and Send
@@ -52,6 +59,6 @@ public class SceneAnalyticsTrigger : MonoBehaviour
         AnalyticsService.Instance.Flush();
 
         Debug.Log($"<color=cyan>Analytics Success:</color> Sent event 'ContainsEnteringStage' " +
-                  $"(Win: {isWinScene}, Secret: {isSecretScene}, Lost: {isLostScene})");
+                  $"(Win: {isWinScene}, Secret: {isSecretScene}, Lost: {isLostScene}) using meteor {MeteorUsing} ");
     }
 }
