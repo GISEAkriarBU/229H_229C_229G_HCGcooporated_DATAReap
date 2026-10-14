@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Entity
 {
-    private ConstantForce force;  // Constant force for movement
+    private ConstantForce force;
 
     protected virtual void Start()
     {
@@ -24,9 +24,10 @@ public class Enemy : Entity
         if (other.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
-            
+        }
+        else if (other.CompareTag("Boundary"))
+        {
+            Destroy(gameObject);
         }
     }
-    
-    
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,8 +12,8 @@ public class Entity : MonoBehaviour
     private int score;
     public int Score { get => score; set => score = value; }
 
-    [SerializeField] private AudioClip hitSound;
-    private AudioSource audioSource;
+    [SerializeField] protected AudioClip hitSound; // ปรับเป็น protected
+    protected AudioSource audioSource;             // ปรับเป็น protected
 
     public void Init(int newHealth)
     {

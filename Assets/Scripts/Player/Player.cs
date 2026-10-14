@@ -1,15 +1,16 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class Player : Entity, ShootAble
 {
     [SerializeField]
     private Transform bulletSpawn;
     public Transform BulletSpawn { get { return bulletSpawn; } set { bulletSpawn = value; } }
-    [SerializeField]
 
+    [SerializeField]
     private Transform meteorSpawn;
     public Transform MeteorSpawn { get { return meteorSpawn; } set { meteorSpawn = value; } }
 
@@ -21,10 +22,9 @@ public class Player : Entity, ShootAble
     private GameObject meteor;
     public GameObject Meteor { get { return meteor; } set { meteor = value; } }
 
-   
     private int currentHealth;
     private int maxHealth = 100;
-    
+
     [field: SerializeField]
     public float BulletTimer { get; set; }
     [field: SerializeField]
@@ -35,7 +35,6 @@ public class Player : Entity, ShootAble
     public float MeteoriteWaitTime { get; set; }
     private Animator animator;
 
-
     public void Start()
     {
         SceneAnalyticsTrigger.MeteorUsing = 0;
@@ -43,6 +42,7 @@ public class Player : Entity, ShootAble
         Init(maxHealth);
         UpdateScoreUI();
     }
+
     [SerializeField] private Text scoreText;  // Assign this in the Inspector
     private int score = 0;
 
@@ -74,9 +74,15 @@ public class Player : Entity, ShootAble
     {
         SceneManager.LoadScene("WinAndCredit"); // Replace with actual scene name
     }
-    
+
     private void Update() { Shoot(); }
-    void FixedUpdate() { BulletWaitTime += Time.deltaTime; MeteoriteWaitTime += Time.deltaTime; }
+
+    void FixedUpdate()
+    {
+        BulletWaitTime += Time.deltaTime;
+        MeteoriteWaitTime += Time.deltaTime;
+    }
+
     public void Shoot()
     {
         if (Input.GetButtonDown("Fire1") && BulletWaitTime >= BulletTimer)
@@ -102,7 +108,6 @@ public class Player : Entity, ShootAble
                 animator.CrossFade("SpecialAttack", 0.1f);
             }
 
-
             SceneAnalyticsTrigger.MeteorUsing++;
             GameObject obj = Instantiate(Meteor, MeteorSpawn.position, MeteorSpawn.rotation);
             Meteorite Mtr = obj.GetComponent<Meteorite>();
@@ -117,7 +122,7 @@ public class Player : Entity, ShootAble
     {
         Score += points;
         audioSource.PlayOneShot(scoreSound);
-        audioSource.PlayOneShot(hitSound);
+        audioSource.PlayOneShot(hitSound); // ดึง hitSound มาจากคลาส Entity ได้ปกติ
     }
 
     private void OnTriggerEnter(Collider other)
@@ -125,20 +130,18 @@ public class Player : Entity, ShootAble
         if (other.CompareTag("Enemy")) // If player collides with enemy
         {
             Debug.Log("Player hit by Enemy! Game Over.");
-            SceneManager.LoadScene ("GameOverScene"); // Replace with actual scene name
+            SceneManager.LoadScene("GameOverScene"); // Replace with actual scene name
         }
     }
-    
+
     [SerializeField] private AudioClip shootSound;
     [SerializeField] private AudioClip meteorSound;
     [SerializeField] private AudioClip scoreSound;
-    [SerializeField] private AudioClip hitSound;
-
-    private AudioSource audioSource;
+    // (ตัด hitSound และ audioSource ที่ซ้ำซ้อนออกไปแล้ว)
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>(); // ดึง audioSource มาจากคลาส Entity ได้ปกติ
         animator = GetComponent<Animator>();
 
         if (animator == null)
@@ -146,7 +149,4 @@ public class Player : Entity, ShootAble
             Debug.LogError("Animator is missing on Player!");
         }
     }
-
-
 }
-
