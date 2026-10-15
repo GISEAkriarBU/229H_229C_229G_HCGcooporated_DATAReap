@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    private ConstantForce force;
+    private ConstantForce force;  // Constant force for movement
 
     protected virtual void Start()
     {
@@ -21,10 +21,12 @@ public class Enemy : Entity
 
     private void OnTriggerEnter(Collider other)
     {
+        // เมื่อชนกระสุนของผู้เล่น
         if (other.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
         }
+        // เมื่อหลุดออกนอกจอ (ชน Boundary) ให้ลบตัวศัตรูทิ้งทันที โดยไม่เรียกฟังก์ชัน Die() คะแนนจึงไม่เพิ่ม
         else if (other.CompareTag("Boundary"))
         {
             Destroy(gameObject);
