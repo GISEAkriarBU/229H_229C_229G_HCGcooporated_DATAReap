@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Player : Entity, ShootAble
 {
+    [Header("Spawn Transforms & Prefabs")]
     [SerializeField]
     private Transform bulletSpawn;
     public Transform BulletSpawn { get { return bulletSpawn; } set { bulletSpawn = value; } }
@@ -21,6 +22,20 @@ public class Player : Entity, ShootAble
     [SerializeField]
     private GameObject meteor;
     public GameObject Meteor { get { return meteor; } set { meteor = value; } }
+
+    [Header("Stress Test / Mass Spawn Settings")]
+    [Tooltip("จำนวน Laser ที่จะเสกต่อการยิง 1 ครั้ง")]
+    [SerializeField] private int bulletSpawnCount = 1;
+    [Tooltip("ขอบเขตพื้นที่สุ่มกระจายตำแหน่งของ Laser (X, Y, Z)")]
+    [SerializeField] private Vector3 bulletSpreadArea = new Vector3(2f, 1f, 0f);
+
+    [Tooltip("จำนวน Meteor ที่จะเสกต่อการยิง 1 ครั้ง")]
+    [SerializeField] private int meteorSpawnCount = 1;
+    [Tooltip("ขอบเขตพื้นที่สุ่มกระจายตำแหน่งของ Meteor (X, Y, Z)")]
+    [SerializeField] private Vector3 meteorSpreadArea = new Vector3(10f, 3f, 10f);
+
+    [Tooltip("เปิดเพื่อให้กดคลิกค้างแล้วยิงรัวตาม Timer ได้ (ไม่ต้องกดย้ำทีละคลิก)")]
+    [SerializeField] private bool holdToStressTest = true;
 
     private int currentHealth;
     private int maxHealth = 100;
@@ -55,7 +70,7 @@ public class Player : Entity, ShootAble
             Debug.Log("Score: " + score);
             UpdateScoreUI(); // Update UI when score changes
 
-            if (score >= 1000) // Check if the player reached the next level
+            if (score >= 100000) // Check if the player reached the next level
             {
                 LoadNextScene();
             }
@@ -85,7 +100,11 @@ public class Player : Entity, ShootAble
 
     public void Shoot()
     {
-        if (Input.GetButtonDown("Fire1") && BulletWaitTime >= BulletTimer)
+        bool fire1Pressed = holdToStressTest ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1");
+        bool fire2Pressed = holdToStressTest ? Input.GetButton("Fire2") : Input.GetButtonDown("Fire2");
+
+        // ยิง Laser (Fire1)
+        if (fire1Pressed && BulletWaitTime >= BulletTimer)
         {
             if (animator != null)
             {
@@ -93,15 +112,27 @@ public class Player : Entity, ShootAble
                 animator.SetTrigger("Attack");
             }
 
-            GameObject obj = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
-            BeamLazer bEnergy = obj.GetComponent<BeamLazer>();
-            bEnergy.Init(100, this);
+            int count = Mathf.Max(1, bulletSpawnCount);
+            for (int i = 0; i < count; i++)
+            {
+                Vector3 spawnPos = GetRandomSpreadPosition(BulletSpawn, bulletSpreadArea, count == 1);
+                GameObject obj = Instantiate(Bullet, spawnPos, BulletSpawn.rotation);
+                BeamLazer bEnergy = obj.GetComponent<BeamLazer>();
+                if (bEnergy != null)
+                {
+                    bEnergy.Init(100, this);
+                }
+            }
 
-            audioSource.PlayOneShot(shootSound);
+            if (audioSource != null && shootSound != null)
+            {
+                audioSource.PlayOneShot(shootSound);
+            }
             BulletWaitTime = 0;
         }
 
-        if (Input.GetButtonDown("Fire2") && MeteoriteWaitTime >= MeteoriteTimer)
+        // ยิง Meteor (Fire2)
+        if (fire2Pressed && MeteoriteWaitTime >= MeteoriteTimer)
         {
             if (animator != null)
             {
@@ -109,12 +140,56 @@ public class Player : Entity, ShootAble
             }
 
             SceneAnalyticsTrigger.MeteorUsing++;
-            GameObject obj = Instantiate(Meteor, MeteorSpawn.position, MeteorSpawn.rotation);
-            Meteorite Mtr = obj.GetComponent<Meteorite>();
-            Mtr.Init(500, this);
 
-            audioSource.PlayOneShot(meteorSound);
+            int count = Mathf.Max(1, meteorSpawnCount);
+            for (int i = 0; i < count; i++)
+            {
+                Vector3 spawnPos = GetRandomSpreadPosition(MeteorSpawn, meteorSpreadArea, count == 1);
+                GameObject obj = Instantiate(Meteor, spawnPos, MeteorSpawn.rotation);
+                Meteorite Mtr = obj.GetComponent<Meteorite>();
+                if (Mtr != null)
+                {
+                    Mtr.Init(500, this);
+                }
+            }
+
+            if (audioSource != null && meteorSound != null)
+            {
+                audioSource.PlayOneShot(meteorSound);
+            }
             MeteoriteWaitTime = 0;
+        }
+    }
+
+    // คำนวณตำแหน่งสุ่มในกรอบพื้นที่รอบจุด Spawn (อิงตามแกน Local ของจุด Spawn)
+    private Vector3 GetRandomSpreadPosition(Transform spawnPoint, Vector3 area, bool exactCenter)
+    {
+        if (exactCenter) return spawnPoint.position;
+
+        Vector3 localOffset = new Vector3(
+            Random.Range(-area.x * 0.5f, area.x * 0.5f),
+            Random.Range(-area.y * 0.5f, area.y * 0.5f),
+            Random.Range(-area.z * 0.5f, area.z * 0.5f)
+        );
+
+        return spawnPoint.TransformPoint(localOffset);
+    }
+
+    // วาดกรอบ Gizmos ในหน้า Scene View เพื่อให้กะขนาดพื้นที่ Spawn ได้ง่าย
+    private void OnDrawGizmosSelected()
+    {
+        if (BulletSpawn != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.matrix = BulletSpawn.localToWorldMatrix;
+            Gizmos.DrawWireCube(Vector3.zero, bulletSpreadArea);
+        }
+
+        if (MeteorSpawn != null)
+        {
+            Gizmos.color = new Color(1f, 0.5f, 0f);
+            Gizmos.matrix = MeteorSpawn.localToWorldMatrix;
+            Gizmos.DrawWireCube(Vector3.zero, meteorSpreadArea);
         }
     }
 
@@ -122,26 +197,25 @@ public class Player : Entity, ShootAble
     {
         Score += points;
         audioSource.PlayOneShot(scoreSound);
-        audioSource.PlayOneShot(hitSound); // ดึง hitSound มาจากคลาส Entity ได้ปกติ
+        audioSource.PlayOneShot(hitSound); // ดึง hitSound มาจากคลาส Entity ได้ปกติ[cite: 20]
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy")) // If player collides with enemy
+        if (other.CompareTag("Enemy")) // If player collides with enemy[cite: 20]
         {
             Debug.Log("Player hit by Enemy! Game Over.");
-            SceneManager.LoadScene("GameOverScene"); // Replace with actual scene name
+            SceneManager.LoadScene("GameOverScene"); // Replace with actual scene name[cite: 20]
         }
     }
 
     [SerializeField] private AudioClip shootSound;
     [SerializeField] private AudioClip meteorSound;
     [SerializeField] private AudioClip scoreSound;
-    // (ตัด hitSound และ audioSource ที่ซ้ำซ้อนออกไปแล้ว)
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>(); // ดึง audioSource มาจากคลาส Entity ได้ปกติ
+        audioSource = GetComponent<AudioSource>(); // ดึง audioSource มาจากคลาส Entity ได้ปกติ[cite: 20]
         animator = GetComponent<Animator>();
 
         if (animator == null)
